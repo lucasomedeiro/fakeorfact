@@ -69,18 +69,16 @@ namespace FakeOrFact
             if (_jogo.JogoEncerrado)
             {
                 lblPergunta.Text = $"Fim! Sua pontuação final: {_jogo.Pontuacao} pontos";
-                btnFake_Click.Enabled = false; 
-                btnFact_Click.Enabled = false;
+                btnFake.Enabled = false; // CORRIGIDO: referencia o controle, não o método
+                btnFact.Enabled = false;
                 return;
             }
 
-            Pergunta atual = _jogo.PerguntaAtual();
-            lblPergunta.Text = atual.Enunciado;
+            Pergunta atual = _jogo.PerguntaAtual()!;
+            lblPergunta.Text  = atual.Enunciado;
             lblProgresso.Text = $"Pergunta {_jogo.IndiceAtual + 1} de {_jogo.TotalPerguntas}";
-            btnFake_Click.Enabled = true;
-            btnFact_Click.Enabled = true;
-
-
+            btnFake.Enabled   = true;
+            btnFact.Enabled   = true;
         }
     }
 }

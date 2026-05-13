@@ -8,7 +8,7 @@ namespace FakeOrFact
         public int Pontuacao { get; set; }
         public int IndiceAtual { get; set; }
         public int TotalPerguntas { get; set; }
-        public bool JogoEncerrado => IndiceAtual >= TotalPerguntas; 
+        public bool JogoEncerrado => IndiceAtual >= TotalPerguntas; // CORRIGIDO: => virou >=
 
         private List<Pergunta> _perguntas;
 
